@@ -1,36 +1,81 @@
-import { ExternalLink, Github } from "lucide-react";
+import { Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
+import Digital_Time from "@/assets/Digital_Time.png";
+import Liste_a_tout_faire from "@/assets/Liste_a_tout_faire.png";
+import Quot_x_files from "@/assets/Quot_x_files.png";
+import Porfolio_Lorlavie from "@/assets/Porfolio-Lorlavie.png";
+import Quete_des_Gueux from "@/assets/Quete_des_Gueux.png";
+import gite_Lorlavie from "@/assets/gite_Lorlavie.jpg";
+import ImmersiveWrite from "@/assets/immersivewrite.png";
+import Project_CalcUnicorn from "@/assets/Project_CalcUnicorn.png";
 
 const Projects = () => {
   const projects = [
     {
-      title: "ProjetQuiMarcheEnLocal",
-      description: "Mystère encore non résolu... mais ça avance ! 🎭",
-      tags: ["React", "JavaScript", "CSS"],
-      gradient: "from-[hsl(var(--color-pink))] to-[hsl(var(--color-purple))]",
-      status: "En cours",
+      image: ImmersiveWrite,
+      title: "ImmersiveWrite",
+      description:
+        "Application d’écriture immersive pour stimuler la créativité.",
+      tags: ["React", "UX", "Créativité"],
+      gradient: "from-[hsl(var(--color-blue))] to-[hsl(var(--color-purple))]",
+      github: "https://github.com/LaureLavie/ImmersiveWrite",
     },
     {
-      title: "TodoApp Numéro 1",
-      description: "Mon premier projet ! Soyez indulgents, c'est avec amour 💜",
-      tags: ["HTML", "CSS", "JavaScript"],
+      image: gite_Lorlavie,
+      title: "gite_Lorlavie",
+      description: "Site vitrine pour un gîte, design et réservation.",
+      tags: ["HTML", "CSS", "Vitrine"],
       gradient: "from-[hsl(var(--color-orange))] to-[hsl(var(--color-yellow))]",
-      status: "Terminé",
+      github: "https://github.com/LaureLavie/gite_Lorlavie",
     },
     {
-      title: "AppQuiVaChangerLeMonde",
-      description: "En cours depuis ma naissance... de développeuse 🚀",
-      tags: ["React", "Design System", "Magic"],
+      image: Project_CalcUnicorn,
+      title: "Project_CalcUnicorn",
+      description: "Calculatrice magique pour licornes et rêveurs.",
+      tags: ["JavaScript", "Fun", "Calculatrice"],
+      gradient: "from-[hsl(var(--color-pink))] to-[hsl(var(--color-purple))]",
+      github: "https://github.com/LaureLavie/Project_CalcUnicorn",
+    },
+    {
+      image: Digital_Time,
+      title: "Digital_Time",
+      description: "Horloge digitale stylée et personnalisable.",
+      tags: ["JavaScript", "Horloge", "UI"],
       gradient: "from-[hsl(var(--color-blue))] to-[hsl(var(--color-green))]",
-      status: "En développement",
+      github: "https://github.com/LaureLavie/Digital_Time",
     },
     {
-      title: "LaVraieBonneIdéeCetteFois",
-      description: "Spoiler: peut-être ! Restez à l'affût 🌟",
-      tags: ["React", "TypeScript", "Innovation"],
+      image: Liste_a_tout_faire,
+      title: "Liste_a_tout_faire",
+      description: "To-do list pour organiser vos journées avec style.",
+      tags: ["React", "Productivité", "ToDo"],
       gradient: "from-[hsl(var(--color-purple))] to-[hsl(var(--color-pink))]",
-      status: "Bientôt",
+      github: "https://github.com/LaureLavie/Liste_a_tout_faire",
+    },
+    {
+      image: Quot_x_files,
+      title: "Quot_x_files",
+      description: "Application de citations X-Files pour fans de mystères.",
+      tags: ["React", "API", "Citations"],
+      gradient: "from-[hsl(var(--color-orange))] to-[hsl(var(--color-yellow))]",
+      github: "https://github.com/LaureLavie/Quot_x_files",
+    },
+    {
+      image: Porfolio_Lorlavie,
+      title: "Porfolio-Lorlavie",
+      description: "Mon portfolio créatif, design et développement.",
+      tags: ["React", "Portfolio", "Design"],
+      gradient: "from-[hsl(var(--color-pink))] to-[hsl(var(--color-purple))]",
+      github: "https://github.com/LaureLavie/Porfolio-Lorlavie",
+    },
+    {
+      image: Quete_des_Gueux,
+      title: "Quete_des_Gueux",
+      description: "Projet d’aventure et de jeu, pour les explorateurs du web.",
+      tags: ["JavaScript", "Jeu", "Aventure"],
+      gradient: "from-[hsl(var(--color-blue))] to-[hsl(var(--color-green))]",
+      github: "https://github.com/LaureLavie/Quete_des_Gueux",
     },
   ];
 
@@ -42,7 +87,8 @@ const Projects = () => {
             Mes Projets
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto font-handwriting">
-            🎪 Le cirque de mes créations digitales
+            🎨 Des projets pensés pour vous, même si le web vous semble un peu
+            magique !
           </p>
         </div>
 
@@ -56,17 +102,22 @@ const Projects = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: index * 0.1 }}
             >
+              <motion.img
+                src={project.image}
+                alt={project.title}
+                className="w-full h-40 object-cover rounded-2xl shadow-medium group-hover:shadow-glow-pink"
+                initial={{ opacity: 0, scale: 0.95, y: 20 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                whileHover={{
+                  scale: 1.04,
+                  boxShadow: "0 0 40px hsla(330,100%,71%,0.3)",
+                }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+              />
               {/* Project header with gradient */}
               <div
                 className={`h-2 rounded-full bg-gradient-to-r ${project.gradient} mb-6`}
               />
-
-              {/* Status badge */}
-              <span
-                className={`inline-block px-3 py-1 rounded-full text-xs font-semibold mb-4 bg-gradient-to-r ${project.gradient} text-white`}
-              >
-                {project.status}
-              </span>
 
               <h3 className="text-2xl font-bold mb-3 text-foreground group-hover:text-primary transition-colors">
                 {project.title}
@@ -93,17 +144,17 @@ const Projects = () => {
                 <Button
                   variant="outline"
                   size="sm"
-                  className="flex-1 glass-effect hover:bg-white/20"
-                >
-                  <ExternalLink className="w-4 h-4 mr-2" />
-                  Voir le projet
-                </Button>
-                <Button
-                  variant="outline"
-                  size="sm"
                   className="glass-effect hover:bg-white/20"
+                  asChild
                 >
-                  <Github className="w-4 h-4" />
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Github className="w-4 h-4 mr-2" />
+                    GitHub
+                  </a>
                 </Button>
               </div>
             </motion.div>

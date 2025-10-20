@@ -11,8 +11,8 @@ const Footer = () => {
               Lorlavie Dev'Design
             </h3>
             <p className="text-sm text-muted-foreground">
-              Développeuse web créative • Transformons vos idées en code coloré
-              ✨
+              Développeuse web créative • Transformons vos idées en projet
+              innovant ✨
             </p>
           </div>
 

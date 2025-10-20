@@ -69,15 +69,15 @@ const About = () => {
             </p>
             <p className="text-foreground/80">
               Je suis une développeuse web créative qui adore transformer des
-              idées en code coloré et fonctionnel. Spécialisée en{" "}
+              idées en projet innovant et fonctionnel. Spécialisée en{" "}
               <span className="font-semibold text-primary">React</span> et{" "}
               <span className="font-semibold text-secondary">JavaScript</span>,
               je crée des sites web et applications mobiles avec une touche
               artistique unique.
             </p>
             <p className="text-foreground/80">
-              🦄 <span className="font-handwriting text-xl">Mon motto :</span>{" "}
-              "Error 418 - Je suis une théière, pas un café !"
+              🦄 <span className="font-handwriting text-xl">Mon mantra :</span>{" "}
+              "Error 418 - Je suis une théière, pas un cafetière !"
               <br />☕ Ma recette secrète :{" "}
               <span className="font-semibold">
                 40% café + 30% curiosité + 20% créativité + 10% chaos organisé
@@ -117,7 +117,7 @@ const About = () => {
         {/* Fun fact */}
         <div className="mt-16 text-center">
           <p className="text-lg font-handwriting text-primary/80 max-w-2xl mx-auto">
-            💫 "Il y a 10 types de clients : ceux qui ont une idée et ceux qui
+            💫 "Il y a 2 types de clients : ceux qui ont une idée et ceux qui
             n’osent pas encore la partager… Je m’occupe du reste !" 💫
           </p>
         </div>

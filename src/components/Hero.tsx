@@ -1,170 +1,132 @@
+import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Github, Linkedin, Mail, Instagram } from "lucide-react";
 import logo from "@/assets/logo-lorlavie.png";
+import heroBg from "@/assets/hero-bg.jpg";
 import { motion } from "framer-motion";
+
 const Hero = () => {
+  const scrollToContact = () => {
+    const element = document.getElementById("contact");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 py-20">
-      {/* Animated background gradient */}
-      <motion.div
-        className="absolute inset-0 opacity-30"
-        style={{ background: "var(--gradient-hero)" }}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 0.3 }}
-        transition={{ duration: 1 }}
-      />
-      {/* Decorative watercolor splashes */}
-      <motion.div
-        className="absolute top-20 left-10 w-32 h-32 rounded-full blur-3xl bg-gradient-to-br from-[hsl(var(--color-orange))] to-[hsl(var(--color-yellow))] opacity-20"
-        initial={{ y: -30, opacity: 0 }}
-        animate={{ y: 0, opacity: 0.2 }}
-        transition={{ duration: 1 }}
-      />
-      <motion.div
-        className="absolute bottom-40 right-20 w-40 h-40 rounded-full blur-3xl bg-gradient-to-br from-[hsl(var(--color-pink))] to-[hsl(var(--color-purple))] opacity-20"
-        initial={{ y: 30, opacity: 0 }}
-        animate={{ y: 0, opacity: 0.2 }}
-        transition={{ duration: 1, delay: 0.5 }}
-      />
-      <motion.div
-        className="absolute top-1/2 right-10 w-36 h-36 rounded-full blur-3xl bg-gradient-to-br from-[hsl(var(--color-blue))] to-[hsl(var(--color-green))] opacity-20"
-        initial={{ x: 30, opacity: 0 }}
-        animate={{ x: 0, opacity: 0.2 }}
-        transition={{ duration: 1, delay: 1 }}
-      />
-
-      <div className="container max-w-6xl mx-auto relative z-10">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Left side - Text content */}
-          <motion.div
-            className="space-y-6"
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <div className="space-y-2">
-              <p
-                className="text-lg md:text-xl font-handwriting text-primary animate-splash-in"
-                style={{ animationDelay: "0.2s" }}
-              >
-                ✨ Bonjour, je suis
-              </p>
-              <h1
-                className="text-5xl md:text-7xl font-bold text-watercolor leading-tight animate-splash-in"
-                style={{ animationDelay: "0.4s" }}
-              >
-                Lorlavie
-              </h1>
-              <p
-                className="text-2xl md:text-3xl font-semibold text-foreground/80 animate-splash-in"
-                style={{ animationDelay: "0.6s" }}
-              >
-                Dev'Design
-              </p>
-            </div>
-
-            <p
-              className="text-lg md:text-xl text-muted-foreground max-w-xl animate-fade-in-up"
-              style={{ animationDelay: "0.8s" }}
-            >
-              Développeuse web créative qui transforme le café en code coloré ☕
-              <br />
-              <span className="font-handwriting text-xl text-primary">
-                Spécialisée en React • JavaScript • Design créatif
-              </span>
-            </p>
-
-            <motion.div
-              className="flex flex-wrap gap-4"
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 1 }}
-            >
-              <Button
-                size="lg"
-                className="bg-gradient-to-r from-[hsl(var(--color-pink))] to-[hsl(var(--color-purple))] hover:shadow-[var(--shadow-glow-pink)] transition-all duration-300 text-white font-semibold"
-              >
-                Voir mes projets
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="glass-effect hover:bg-white/20 transition-all duration-300"
-              >
-                Me contacter
-              </Button>
-            </motion.div>
-
-            {/* Social links */}
-            <motion.div
-              className="flex gap-4 pt-4"
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 1.2 }}
-            >
-              <a
-                href="https://github.com/LaureLavie"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-3 rounded-full glass-effect hover:bg-gradient-to-r hover:from-[hsl(var(--color-orange))] hover:to-[hsl(var(--color-yellow))] hover:text-white transition-all duration-300"
-              >
-                <Github className="w-5 h-5" />
-              </a>
-              <a
-                href="https://www.linkedin.com/in/laurelavie/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-3 rounded-full glass-effect hover:bg-gradient-to-r hover:from-[hsl(var(--color-blue))] hover:to-[hsl(var(--color-purple))] hover:text-white transition-all duration-300"
-              >
-                <Linkedin className="w-5 h-5" />
-              </a>
-              <a
-                href="https://www.instagram.com/lorlavie/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-3 rounded-full glass-effect hover:bg-gradient-to-r hover:from-[hsl(var(--color-pink))] hover:to-[hsl(var(--color-orange))] hover:text-white transition-all duration-300"
-              >
-                <Instagram className="w-5 h-5" />
-              </a>
-              <a
-                href="mailto:lorlavie@gmail.com"
-                className="p-3 rounded-full glass-effect hover:bg-gradient-to-r hover:from-[hsl(var(--color-green))] hover:to-[hsl(var(--color-blue))] hover:text-white transition-all duration-300"
-              >
-                <Mail className="w-5 h-5" />
-              </a>
-            </motion.div>
-          </motion.div>
-
-          {/* Right side - Logo with watercolor effect */}
-          <motion.div
-            className="relative"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-          >
-            <div className="relative">
-              {/* Glow effects behind logo */}
-              <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--color-pink))] via-[hsl(var(--color-purple))] to-[hsl(var(--color-blue))] opacity-20 blur-3xl rounded-full animate-pulse" />
-              {/* Logo */}
-              <img
-                src={logo}
-                alt="Lorlavie - Développeuse créative"
-                className="relative w-full max-w-md mx-auto drop-shadow-2xl animate-float"
-              />
-            </div>
-            {/* Decorative text elements */}
-            <div className="absolute -top-8 -right-4 font-handwriting text-3xl text-primary rotate-12 opacity-70">
-              💜 Code avec amour
-            </div>
-            <div className="absolute -bottom-8 -left-4 font-handwriting text-2xl text-secondary rotate-[-8deg] opacity-70">
-              ✨ Créativité digitale
-            </div>
-          </motion.div>
-        </div>
+    <section
+      id="hero"
+      className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden"
+    >
+      {/* Background Image with Blur */}
+      <div className="absolute inset-0 z-0">
+        <img src={heroBg} alt="" className="w-full h-full object-contain" />
+        <div className="absolute inset-0 bg-background/40 backdrop-blur-sm"></div>
       </div>
 
-      {/* Bottom decorative wave */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
+      {/* Content with Glassmorphism */}
+      <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20">
+        <div className="backdrop-blur-md bg-background/30 rounded-3xl p-8 sm:p-12 border border-white/20 shadow-2xl">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            {/* Left Column - Text */}
+            <div className="space-y-6 sm:space-y-8 text-center lg:text-left">
+              <motion.h1
+                className="text-4xl sm:text-5xl lg:text-7xl font-bold leading-tight"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+              >
+                Développeuse web créative{" "}
+                <span className="text-gradient">
+                  Vos projets qui dépotent !
+                </span>
+              </motion.h1>
+              <motion.p
+                className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto lg:mx-0"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+              >
+                Développeuse web passionnée, je transforme vos idées en sites
+                web et applications modernes, performants et créatifs.
+              </motion.p>
+              <motion.div
+                className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+              >
+                <Button
+                  size="lg"
+                  onClick={scrollToContact}
+                  className="shadow-glow group text-base sm:text-lg"
+                >
+                  Démarrer un projet
+                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                </Button>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  onClick={() =>
+                    window.open("https://github.com/LaureLavie", "_blank")
+                  }
+                  className="text-base sm:text-lg"
+                >
+                  Voir mes projets
+                </Button>
+              </motion.div>
+              <motion.div
+                className="flex gap-4 justify-center lg:justify-start"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.6, delay: 0.6 }}
+              >
+                <motion.a
+                  href="https://github.com/LaureLavie"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-3 rounded-full hover:bg-primary/10 transition-colors"
+                  aria-label="GitHub"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <Github className="h-6 w-6" />
+                </motion.a>
+                <motion.a
+                  href="mailto:contact@lorlavie-devdesign.fr"
+                  className="p-3 rounded-full hover:bg-primary/10 transition-colors"
+                  aria-label="Email"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <Mail className="h-6 w-6" />
+                </motion.a>
+              </motion.div>
+            </div>
+
+            {/* Right Column - Logo */}
+            <motion.div
+              className="flex justify-center lg:justify-end"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+            >
+              <motion.img
+                src={logo}
+                alt="Lorlavie Dev'Design"
+                className="w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 object-contain drop-shadow-2xl"
+                animate={{
+                  y: [0, -20, 0],
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+              />
+            </motion.div>
+          </div>
+        </div>
+      </div>
     </section>
   );
 };
