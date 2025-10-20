@@ -117,9 +117,8 @@ const About = () => {
         {/* Fun fact */}
         <div className="mt-16 text-center">
           <p className="text-lg font-handwriting text-primary/80 max-w-2xl mx-auto">
-            💫 "Il y a 10 types de personnes dans le monde : celles qui
-            comprennent le binaire et les autres... et moi qui crée des bugs en
-            dormant" 💫
+            💫 "Il y a 10 types de clients : ceux qui ont une idée et ceux qui
+            n’osent pas encore la partager… Je m’occupe du reste !" 💫
           </p>
         </div>
       </div>

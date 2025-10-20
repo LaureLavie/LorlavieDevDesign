@@ -25,7 +25,7 @@ const Contact = () => {
             Contactez-moi
           </h2>
           <p className="text-xl text-muted-foreground font-handwriting">
-            💌 Prenons un café virtuel et discutons de votre projet !
+            💌 Discutons de votre projet autour d'un café !
           </p>
         </div>
 
@@ -45,10 +45,10 @@ const Contact = () => {
                 <div>
                   <h3 className="font-semibold text-foreground mb-1">Email</h3>
                   <a
-                    href="mailto:lorlavie@gmail.com"
+                    href="mailto:lorlaviedevdesign@gmail.com"
                     className="text-muted-foreground hover:text-primary transition-colors"
                   >
-                    lorlavie@gmail.com
+                    lorlaviedevdesign@gmail.com
                   </a>
                 </div>
               </motion.div>
@@ -62,7 +62,7 @@ const Contact = () => {
                     Localisation
                   </h3>
                   <p className="text-muted-foreground">
-                    France 🇫🇷 • Disponible en remote
+                    PAU 🇫🇷 • Disponible en remote
                   </p>
                 </div>
               </div>
@@ -76,7 +76,7 @@ const Contact = () => {
                     Disponibilité
                   </h3>
                   <p className="text-muted-foreground">
-                    Ouverte à de nouveaux projets et collaborations
+                    Du Lundi au Vendredi, 9h - 18h
                   </p>
                 </div>
               </div>
